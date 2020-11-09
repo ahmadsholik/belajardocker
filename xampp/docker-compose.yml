@@ -1,0 +1,16 @@
+version: "2"
+services:
+    app:
+        image: tomsik68/xampp:latest
+        ports: 
+            - "8080:80"
+        volumes:
+            - /home/ahmad/www:/opt/lampp/htdocs/
+            - persistent:/opt/lampp/var/mysql
+        networks:
+            - default
+        environment:
+            - ALLOW_EMPTY_PASSWORD=yes
+    
+volumes:
+    persistent:
